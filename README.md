@@ -1,5 +1,9 @@
 ## Tarea 12
 ## Distribucion Normal
+**Ejercicio 1: Generación de la Distribución Normal en Python**
+````
+
+````
 **Ejercicio 2: Probabilidad en un Rango Específico en R**
 ````
 media <- 40
@@ -11,6 +15,10 @@ probabilidad
 curve(dnorm(x, mean=media, sd=desviacion_estandar), from=20, to=60, col="purple", lwd=2, main="Distribución Normal y Rango de Probabilidad", xlab="Valores", ylab="Densidad")
 abline(v=35, col="red", lty=2)
 abline(v=45, col="red", lty=2)
+
+````
+**Ejercicio 3: Simulación de una Muestra en Python**
+````
 
 ````
 **Ejercicio 4: Comparación de dos Distribuciones en R**
@@ -34,6 +42,10 @@ media_B
 sd_B
 
 ````
+**Ejercicio 5: Cálculo de Percentiles en Python**
+````
+
+````
 **Ejercicio 6: Probabilidad de Exceder un Valor en R**
 ````
 media <- 50
@@ -46,6 +58,10 @@ curve(dnorm(x, mean=media, sd=desviacion_estandar), from=20, to=80, col="purple"
 abline(v=70, col="red", lty=2)
 
 ````
+**Ejercicio 7: Simulación de Distribución Normal Estándar en Python**
+````
+
+````
 **Ejercicio 8: Prueba de Normalidad en R**
 ````
 set.seed(123)
@@ -55,6 +71,10 @@ resultado <- shapiro.test(muestra)
 resultado
 
 hist(muestra, col="purple", main="Prueba de Normalidad", xlab="Valores", ylab="Frecuencia")
+
+````
+**Ejercicio 9: Transformación de una Muestra a una Distribución Normal Estándar en Python**
+````
 
 ````
 **Ejercicio 10: Análisis de la Suma de Dos Variables Normales en R**
