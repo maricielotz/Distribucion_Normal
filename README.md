@@ -9,14 +9,12 @@ media = 60
 desviacion_estandar = 15
 muestra = np.random.normal(media, desviacion_estandar, 1000)
 
-# Histograma 
 plt.hist(muestra, bins=30, color="purple", edgecolor="black")
 plt.title("Distribución Normal")
 plt.xlabel("Valores")
 plt.ylabel("Frecuencia")
 plt.show()
 
-# Media y desviación estándar
 media_muestra = np.mean(muestra)
 desviacion_estandar_muestra = np.std(muestra)
 
