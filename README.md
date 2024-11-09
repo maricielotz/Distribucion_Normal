@@ -2,7 +2,25 @@
 ## Distribucion Normal
 **Ejercicio 1: Generación de la Distribución Normal en Python**
 ````
+import numpy as np
+import matplotlib.pyplot as plt
 
+media = 60
+desviacion_estandar = 15
+muestra = np.random.normal(media, desviacion_estandar, 1000)
+
+# Histograma 
+plt.hist(muestra, bins=30, color="purple", edgecolor="black")
+plt.title("Distribución Normal")
+plt.xlabel("Valores")
+plt.ylabel("Frecuencia")
+plt.show()
+
+# Media y desviación estándar
+media_muestra = np.mean(muestra)
+desviacion_estandar_muestra = np.std(muestra)
+
+media_muestra, desviacion_estandar_muestra
 ````
 **Ejercicio 2: Probabilidad en un Rango Específico en R**
 ````
@@ -19,7 +37,27 @@ abline(v=45, col="red", lty=2)
 ````
 **Ejercicio 3: Simulación de una Muestra en Python**
 ````
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
 
+media = 75
+desviacion_estandar = 8
+muestra = np.random.normal(media, desviacion_estandar, 500)
+
+confianza = 0.95
+limite_inferior, limite_superior = stats.norm.interval(confianza, loc=np.mean(muestra), scale=np.std(muestra, ddof=1))
+
+plt.hist(muestra, bins=30, color="purple", edgecolor="black", alpha=0.7)
+plt.axvline(limite_inferior, color="red", linestyle="--", label="Límite Inferior")
+plt.axvline(limite_superior, color="blue", linestyle="--", label="Límite Superior")
+plt.title("Intervalo de Confianza al 95%")
+plt.xlabel("Valores")
+plt.ylabel("Frecuencia")
+plt.legend()
+plt.show()
+
+limite_inferior, limite_superior
 ````
 **Ejercicio 4: Comparación de dos Distribuciones en R**
 ````
@@ -44,7 +82,24 @@ sd_B
 ````
 **Ejercicio 5: Cálculo de Percentiles en Python**
 ````
+import numpy as np
+import matplotlib.pyplot as plt
 
+media = 100
+desviacion_estandar = 20
+muestra = np.random.normal(media, desviacion_estandar, 100)
+
+percentil_90 = np.percentile(muestra, 90)
+
+plt.hist(muestra, bins=30, color="purple", edgecolor="black", alpha=0.7)
+plt.axvline(percentil_90, color="orange", linestyle="--", label=f"Percentil 90: {percentil_90:.2f}")
+plt.title("Distribución Percentil 90")
+plt.xlabel("Valores")
+plt.ylabel("Frecuencia")
+plt.legend()
+plt.show()
+
+percentil_90
 ````
 **Ejercicio 6: Probabilidad de Exceder un Valor en R**
 ````
@@ -60,7 +115,23 @@ abline(v=70, col="red", lty=2)
 ````
 **Ejercicio 7: Simulación de Distribución Normal Estándar en Python**
 ````
+import numpy as np
+import matplotlib.pyplot as plt
 
+muestra = np.random.normal(0, 1, 1000)
+
+porcentaje = np.mean((muestra > -1) & (muestra < 1)) * 100
+
+plt.hist(muestra, bins=30, color="purple", edgecolor="black", alpha=0.7)
+plt.axvline(-1, color="red", linestyle="--", label="-1")
+plt.axvline(1, color="blue", linestyle="--", label="1")
+plt.title("Distribución Normal Estándar de la Muestra")
+plt.xlabel("Valores")
+plt.ylabel("Frecuencia")
+plt.legend()
+plt.show()
+
+porcentaje
 ````
 **Ejercicio 8: Prueba de Normalidad en R**
 ````
@@ -75,7 +146,25 @@ hist(muestra, col="purple", main="Prueba de Normalidad", xlab="Valores", ylab="F
 ````
 **Ejercicio 9: Transformación de una Muestra a una Distribución Normal Estándar en Python**
 ````
+import numpy as np
+import matplotlib.pyplot as plt
 
+media = 60
+desviacion_estandar = 10
+muestra = np.random.normal(media, desviacion_estandar, 150)
+
+muestra_estandarizada = (muestra - np.mean(muestra)) / np.std(muestra)
+
+plt.hist(muestra_estandarizada, bins=30, color="purple", edgecolor="black", alpha=0.7)
+plt.title("Distribución Normal Estándar")
+plt.xlabel("Valores Estandarizados")
+plt.ylabel("Frecuencia")
+plt.show()
+
+media_transformada = np.mean(muestra_estandarizada)
+desviacion_estandar_transformada = np.std(muestra_estandarizada)
+
+media_transformada, desviacion_estandar_transformada
 ````
 **Ejercicio 10: Análisis de la Suma de Dos Variables Normales en R**
 ````
